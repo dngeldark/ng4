@@ -13,12 +13,12 @@ angular.module('MenuApp')
 	// Home page
 	.state('home', {
 		url: '/',
-		templateUrl: 'views/home.html'
+		templateUrl: '../views/home.html'
 	})
 
 	.state('categories',{
 		url: '/categories',
-		templateUrl: 'views/categories.html',
+		templateUrl: '../views/categories.html',
 		controller: 'CategoriesController as categories',
 		resolve: {
 			categories: ['MenuDataService',function(MenuDataService){
@@ -29,7 +29,7 @@ angular.module('MenuApp')
 
 	.state('items', {
 		url: '/categories/:category',
-		templateUrl: 'views/items.html',
+		templateUrl: '../views/items.html',
 		controller: 'ItemsController as items',
 		resolve: {
 			items: ['$stateParams','MenuDataService', function($stateParams,MenuDataService){
